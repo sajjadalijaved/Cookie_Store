@@ -7,7 +7,7 @@ class CookiePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFFFCFAF8),
+        backgroundColor: Colors.white,
         body: ListView(
           children: <Widget>[
             const SizedBox(height: 15.0),
@@ -83,16 +83,24 @@ class CookiePage extends StatelessWidget {
                                   image: AssetImage(imgPath),
                                   fit: BoxFit.contain)))),
                   const SizedBox(height: 7.0),
-                  Text(price,
-                      style: const TextStyle(
-                          color: Color(0xFFCC8053),
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Text(name,
-                      style: const TextStyle(
-                          color: Color(0xFF575E67),
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
+                  Hero(
+                    tag: price,
+                    child: Text(price,
+                        style: const TextStyle(
+                            decoration: TextDecoration.none,
+                            color: Color(0xFFCC8053),
+                            fontFamily: 'Varela',
+                            fontSize: 14.0)),
+                  ),
+                  Hero(
+                    tag: name,
+                    child: Text(name,
+                        style: const TextStyle(
+                            decoration: TextDecoration.none,
+                            color: Color(0xFF575E67),
+                            fontFamily: 'Varela',
+                            fontSize: 14.0)),
+                  ),
                   Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(

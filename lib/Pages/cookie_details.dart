@@ -11,6 +11,7 @@ class CookieDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
@@ -51,20 +52,28 @@ class CookieDetail extends StatelessWidget {
                 height: 150.0, width: 100.0, fit: BoxFit.contain)),
         const SizedBox(height: 20.0),
         Center(
-          child: Text(cookieprice,
-              style: const TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFF17532))),
+          child: Hero(
+            tag: cookieprice,
+            child: Text(cookieprice,
+                style: const TextStyle(
+                    decoration: TextDecoration.none,
+                    fontFamily: 'Varela',
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFFF17532))),
+          ),
         ),
         const SizedBox(height: 10.0),
         Center(
-          child: Text(cookiename,
-              style: const TextStyle(
-                  color: Color(0xFF575E67),
-                  fontFamily: 'Varela',
-                  fontSize: 24.0)),
+          child: Hero(
+            tag: cookiename,
+            child: Text(cookiename,
+                style: const TextStyle(
+                    decoration: TextDecoration.none,
+                    color: Color(0xFF575E67),
+                    fontFamily: 'Varela',
+                    fontSize: 24.0)),
+          ),
         ),
         const SizedBox(height: 20.0),
         Center(
